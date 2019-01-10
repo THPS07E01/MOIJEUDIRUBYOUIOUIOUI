@@ -39,13 +39,16 @@ def game_rules
     if input == "y" 
         play
     elsif input == "n"
+        puts ""
         puts "Ok, si tu veux revenir au menu, tape 1, si tu veux relire les règles, tape 2"
         print "> "
         input2 = gets.chomp
         if input2 == "1"
+          puts ""
             accueil
         elsif input2 == "2"
-            game_rules
+          puts ""  
+          game_rules
         end
     end
 end
