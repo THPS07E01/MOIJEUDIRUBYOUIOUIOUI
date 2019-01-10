@@ -1,3 +1,4 @@
+# DEFINITION DE LA FONCTION ACCUEIL
 def accueil 
 
     puts "Salut à toi, et bienvenue dans notre super jeu de l'oie de la pyramide de la mort !"
@@ -19,6 +20,7 @@ def accueil
     end
 end
 
+#DEFINITION DE LA FONCTION REGLES DU JEU
 def game_rules
 
     puts "LES RÈGLES"
@@ -48,6 +50,7 @@ def game_rules
     end
 end
 
+#ON DEFINIT LES FONCTIONS POUR NOTRE SUPER INTERFACE GRAPHIQUE QUI TUE (Game Over & Pyramid_*)
 def game_over
   puts "
        _____                        _____                
@@ -248,6 +251,7 @@ def pyramid_10
 end
 
 
+#ON DEFINIT LA FONCTION JEU
 def play
 
 	try = 0
@@ -259,54 +263,56 @@ def play
 
 
 
-	puts `clear`
+	puts `clear`               #Permet de vider l'écran et de partir sur un terminal propre.
 
 		while stage < 10
 
-			if input == "stop"
+			if input == "stop"     #Permet d'avoir une fonction stop pour arrêter le jeu en cours.
 				break
 			end
 
 			try += 1
 			dice = rand 6
 
-				if dice >= 5
+				if dice >= 5                  #Condition pour monter d'une marche.
 					stage += 1
 
-					if stage == 10
+					if stage == 10              #Condition de victoire.
 						pyramid_10
 						game_over
 						puts "YOU WIN !"
 						break
 
-					else
+					else                        #Condition de non victoire malgré ascension.
 						send("pyramid_#{stage}")
-						puts "Bien joué, tu as réussis a grimper, tu es actuellement à l'étage n°#{stage}."
+						puts "Bien joué, tu as réussi a grimper, tu es actuellement à l'étage n°#{stage}."
 					end
 
-				elsif dice == 1
+				elsif dice == 1               #Condition pour descendre d'une marche.
 
-					if stage > 0
+					if stage > 0                #On ne peut pas descendre plus bas que le sol...
 						stage -= 1
 						send("pyramid_#{stage}")
       					puts "Oh non ! Tu as trébuché et es tombé d'un étage, tu es actuellement à l'étage n°#{stage}."
 
-      				else
+      				else                        #Condition de descente en milieu de pyramide.
       					send("pyramid_#{stage}")
       					puts "Tu as trébuché alors que tu n'as même pas encore commencé à escalader -.-"
       				end
 
-      			else
+      			else                          #Condition de stagnation sur la même marche.
       				send("pyramid_#{stage}")
     				puts "Rien ne s'est passé, tu es toujours à l'étage n°#{stage}."
     			end
 
-    			input = gets.chomp
-    			puts `clear`
+                   input = gets.chomp                 #On redemande de lancer les dès.
+    			puts `clear`                           #On nettoie l'écran pour l'affichage suivant.
     		end
 
-    		return try
+    		return try                               #La fonction renvoie finalement le nombre d'essais, qui nous servira pour les stats.
     	end
+
+#ON DEFINIT LA FONCTION PLAY_STATS, QUI REFAIT LE JEU SANS LES AJOUTS GRAPHIQUES POUR POUVOIR L'EXPLOITER DANS LA FONCTION STATS
 
 def play_stats
 
@@ -324,7 +330,7 @@ def play_stats
 					if stage == 10
 
 					else
-						puts "Bien joué, tu as réussis a grimper, tu es actuellement à l'étage n°#{stage}."
+						puts "Bien joué, tu as réussi a grimper, tu es actuellement à l'étage n°#{stage}."
 					end
 
 				elsif dice == 1
@@ -346,9 +352,11 @@ def play_stats
     		return try
     	end
 
+#ON DEFINIT LA FONCTION STATS
+
 def stats
 
-	puts "Nous allons maintenant passer à la partie statistiques dans :"
+	puts "Nous allons maintenant passer à la partie statistiques dans :"  #Petit compte à rebours.
 	puts "5"
 	sleep(1)
 	puts "4"
@@ -365,13 +373,13 @@ def stats
 	laps = []
 
 
-	100.times do laps << play_stats
+	100.times do laps << play_stats                                       #On rejoue la partie 100 fois.
 	end
 
-	avg = laps.sum / 100
+	avg = laps.sum / 100                                                  #On fait la moyenne des parties jouées.
 
 	sleep(1)
-	puts `clear`
+	puts `clear`                                                          #On vide l'écran et on affiche les stats.
 	sleep(1)
 	puts "Tu viens de voir se dérouler sous tes yeux ébahis un total de 100 parties, en voilà les statistiques :"
 	sleep(1)
@@ -383,4 +391,5 @@ def stats
 end
 
 
+#ENFIN, ON LANCE LE JEU A PARTIR DE L'ACCUEIL !
 accueil
