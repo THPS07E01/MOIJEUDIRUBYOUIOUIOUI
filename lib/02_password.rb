@@ -76,7 +76,7 @@ def welcome_screen
     puts "######                                 ######"
     sleep(0.5)
     puts "######         SURTOUT POUR LES...     ######"
-    sleep(0.5)
+    sleep(2)
     puts "######                                 ######"
     sleep(0.5)
     puts "######     !!! CORRECTIONS THP !!!     ######"
