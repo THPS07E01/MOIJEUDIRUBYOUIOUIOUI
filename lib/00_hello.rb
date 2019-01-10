@@ -16,9 +16,9 @@
 # C'est quoi ton blase ?
   def ask_first_name
     puts "C'est quoi ton petit nom ?"
-    sleep(1)
+    sleep(0.9)
     puts "Non attends !!"
-    sleep(1.5)
+    sleep(1)
     puts "Laisses-moi deviner."
     sleep(3)
     puts "Oh et puis non oublies ça, je trouverais jamais"
