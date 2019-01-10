@@ -255,15 +255,13 @@ end
 def play
 
 	try = 0
-	stage = 0
+     stage = 0
 
 	pyramid_0
 
-	input = gets.chomp
-
-
-
-	puts `clear`               #Permet de vider l'écran et de partir sur un terminal propre.
+     input = gets.chomp
+     
+     puts `clear`               #Permet de vider l'écran et de partir sur un terminal propre.
 
 		while stage < 10
 

@@ -1,3 +1,4 @@
+#ON DEFINIT LE MOT DE PASSE
 def signup
     puts "Salut poto !"
     sleep(0.5)
@@ -10,12 +11,14 @@ def signup
     puts "Allez, vas-y sois créatif, donne moi un truc cool :"
     print "> "
     @user_passwd = gets.chomp
-    while @user_passwd.length == 0
+    while @user_passwd.length == 0            #On oblige l'user à donner un mot de passe supérieur à 0 caractères. 
         puts "Allez, donne moi quelque chose d'un peu mieux que ça...!"
         @user_passwd = gets.chomp
     end
 end
 
+
+#ON DEFINIT LA FONCTION DE LOGIN
 def login
     
     puts "Merci jeune padawan."
@@ -27,7 +30,7 @@ def login
     puts "Quel est le mot de passe que tu m'as donné il y a trois secondes?"
     print "> "
     user_tries = gets.chomp
-    while user_tries != @user_passwd
+    while user_tries != @user_passwd           #Tant que les essais ne correspondent pas au mot de passe...
         sleep(1)
         puts "Merci à toi..."
         sleep(2)
@@ -38,10 +41,11 @@ def login
         user_tries = gets.chomp
        
     end
-    puts `clear`
+    puts `clear`                               #Quand le mot de passe correspond, on envoie vers la Zone Secrète!
     welcome_screen
 end
 
+#ON DEFINIT LA ZONE SECRETE
 def welcome_screen
     puts "#############################################"
     sleep(0.5)
@@ -95,9 +99,11 @@ def welcome_screen
 
 end
 
+#ON DEFINIT LA FONCTION FINALE
 def perform
 signup
 login
 end
 
+#ON EXECUTE
 perform
