@@ -17,6 +17,9 @@ ou via *HTTPS*:
 ### Auteurs
 
  - Frédéric Boursier
- - Benjamin Camino
- - Valentin Cluzan
  - Alexandre Gasior
+
+Le programme *Stairway* a été fait conjointement avec :
+
+ - Benjamin Camino
+ - Valentin Cluzan 
