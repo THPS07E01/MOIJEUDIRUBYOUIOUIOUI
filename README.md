@@ -16,7 +16,7 @@ ou via *HTTPS*:
 
 ### Auteurs
 
-**Frédéric Boursier**
-**Benjamin Camino**
-**Valentin Cluzan**
-**Alexandre Gasior**
+    Frédéric Boursier
+    Benjamin Camino
+    Valentin Cluzan
+    Alexandre Gasior
