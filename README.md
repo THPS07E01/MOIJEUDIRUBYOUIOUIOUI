@@ -1,0 +1,2 @@
+# MOIJEUDIRUBYOUIOUIOUI
+Le jeudi, c'est Ruby
